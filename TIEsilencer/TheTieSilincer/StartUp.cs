@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using Data;
-using Models;
-
-namespace TheTieSilincer
+﻿namespace TheTieSilincer
 {
     using TheTieSilincer.Core;
     using TheTieSilincer.Interfaces;

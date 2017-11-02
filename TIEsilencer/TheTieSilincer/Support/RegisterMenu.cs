@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TheTieSilincer.Support
 {
-    class RegisterMenu
+    internal class RegisterMenu
     {
-        public static void RegisterNewPlayer(string exceptionMessage="")
+        public static void RegisterNewPlayer(string exceptionMessage = "")
         {
             Console.Clear();
             Console.CursorVisible = true;
@@ -17,7 +13,6 @@ namespace TheTieSilincer.Support
 
             if (exceptionMessage != "")
             {
-
                 Console.SetCursorPosition(30, 26);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(exceptionMessage);
@@ -43,8 +38,6 @@ namespace TheTieSilincer.Support
 
             Console.SetCursorPosition(46, 16);
             var password = Console.ReadLine().Trim();
-
-           
 
             Console.CursorVisible = false;
             GameService.CreateCharacter(name, password);
@@ -59,7 +52,6 @@ namespace TheTieSilincer.Support
 
             if (exceptionMessage != "")
             {
-
                 Console.SetCursorPosition(30, 26);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(exceptionMessage);
@@ -85,10 +77,9 @@ namespace TheTieSilincer.Support
 
             Console.SetCursorPosition(46, 16);
             var password = Console.ReadLine().Trim();
-            
-            Console.CursorVisible = false;
-            GameService.CheckLogIn(name,password);
 
+            Console.CursorVisible = false;
+            GameService.CheckLogIn(name, password);
         }
 
         public static void LogInScreen(int selectedButton = 0)
@@ -103,7 +94,6 @@ namespace TheTieSilincer.Support
 
             Console.SetCursorPosition(46, 15);
             Console.Write("Back");
-
 
             var consolecolor = ConsoleColor.Blue;
             if (selectedButton == 0)
@@ -133,7 +123,6 @@ namespace TheTieSilincer.Support
             Console.SetCursorPosition(0, 0);
         }
 
-
         private static void DrawBox(int col, int row, int width, int hight, char ch, ConsoleColor consolecolor = ConsoleColor.White)
         {
             Console.ForegroundColor = consolecolor;
@@ -154,7 +143,5 @@ namespace TheTieSilincer.Support
             }
             Console.ForegroundColor = ConsoleColor.White;
         }
-
-        
     }
 }

@@ -17,6 +17,4 @@
     public delegate void NewDestroyShipEventHandler(object sender, NewDestroyShipEventArgs args);
 
     public delegate void NewShipCollidesWithPlayerShipEventEventHandler(object sender, NewShipCollidesWithPlayerShipEventEventArgs args);
-
-
 }

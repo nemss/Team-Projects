@@ -15,7 +15,7 @@
                     RegisterMenu.LogInScreen();
                     MenuService.ShowLogInScreen();
                     MenuService.LogInScreenSelection();
-                    
+
                     break;
 
                 case 1://Credits SCREEN
@@ -35,7 +35,7 @@
 
         public static void LogInScreenSelection()
         {
-            switch (currentPossition) 
+            switch (currentPossition)
             {
                 case 0://Register New Player
                     RegisterMenu.RegisterNewPlayer();
@@ -49,8 +49,6 @@
                     MenuService.ShowWelcomeScreen();
                     MenuService.WelcomeMenuScreenSelection();
                     break;
-
-                
             }
         }
 
@@ -123,16 +121,11 @@
                 else if (pressedKey.Key == ConsoleKey.Enter)
                 {
                     isSelecting = false;
-
                 }
-
 
                 RegisterMenu.LogInScreen(currentPossition);
                 //Console.Clear();
             }
         }
-
-
-
     }
 }

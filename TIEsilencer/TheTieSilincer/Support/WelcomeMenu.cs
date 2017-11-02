@@ -1,8 +1,8 @@
 ﻿namespace TheTieSilincer.Support
 {
+    using global::Models;
     using System;
     using System.Collections.Generic;
-    using global::Models;
     using TheTieSilincer.Services;
 
     public static class WelcomeMenu
@@ -63,11 +63,8 @@
             Console.Clear();
             Console.CursorVisible = false;
 
+            List<Score> scores = GameService.GetNamesOfTop10Players();
 
-
-            List<Score> scores=GameService.GetNamesOfTop10Players();
-
-            
             Console.SetCursorPosition(45, 2);
             Console.Write("Top 10 Results");
             Console.SetCursorPosition(36, 4);
@@ -80,8 +77,6 @@
                 Console.SetCursorPosition(36, 5 + num);
                 Console.WriteLine($"{num}. {score.PlayerDb.Name} {score.Points}");
                 num++;
-            
-
             }
             Console.ReadLine();
 
@@ -89,13 +84,10 @@
             MenuService.ShowWelcomeScreen();
             MenuService.WelcomeMenuScreenSelection();
             Console.Clear();
-
-
         }
 
         public static void LogIn()
         {
-
             Console.Clear();
             Console.CursorVisible = true;
             Console.Clear();
@@ -115,8 +107,6 @@
             GameService.CreateCharacter(name, "pass");
         }
 
-
-       
         public static void Credits()
         {
             Console.Clear();

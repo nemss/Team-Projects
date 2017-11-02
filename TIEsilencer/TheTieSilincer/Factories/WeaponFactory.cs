@@ -7,7 +7,7 @@
     using TheTieSilincer.Interfaces;
     using TheTieSilincer.Models.Weapons;
 
-    public class WeaponFactory:IWeaponFactory
+    public class WeaponFactory : IWeaponFactory
     {
         public Weapon CreateWeapon(WeaponType weaponType)
         {

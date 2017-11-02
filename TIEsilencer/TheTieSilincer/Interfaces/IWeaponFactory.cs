@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TheTieSilincer.Interfaces
+﻿namespace TheTieSilincer.Interfaces
 {
     using TheTieSilincer.Enums;
     using TheTieSilincer.Models.Weapons;

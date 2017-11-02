@@ -1,8 +1,6 @@
 ﻿namespace TheTieSilincer.EventArguments
 {
     using System;
-    using System.Collections.Generic;
-    using TheTieSilincer.Models.Weapons;
 
     public class NewDestroyShipEventArgs : EventArgs
     {

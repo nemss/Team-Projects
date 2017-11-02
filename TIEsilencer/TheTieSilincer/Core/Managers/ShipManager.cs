@@ -36,7 +36,6 @@
 
         private Random rnd;
 
-        
         public ShipManager()
         {
             this.shipFactory = new ShipFactory();
@@ -46,7 +45,6 @@
             this.weaponTypes = (WeaponType[])Enum.GetValues(typeof(WeaponType));
             this.rnd = new Random();
         }
-
 
         public IList<IShip> Ships
         {
@@ -88,7 +86,6 @@
                     DestroyShip(f);
 
                     OnShipCollidesWithPlayer(new NewShipCollidesWithPlayerShipEventEventArgs(20));
-
                 }
                 else
                 {
@@ -118,7 +115,6 @@
                     DestroyShip(ship);
 
                     OnSendMessageWhenShipDestroyed(new NewDestroyShipEventArgs(100));
-
                 }
                 else
                 {

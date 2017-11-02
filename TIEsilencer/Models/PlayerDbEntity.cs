@@ -1,10 +1,7 @@
-﻿using System;
+﻿using Models.Exceptions;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Models.Exceptions;
 using TheTieSilincer.Exceptions;
 
 namespace Models
@@ -18,10 +15,11 @@ namespace Models
         {
             this.Scores = new List<Score>();
         }
-        public PlayerDbEntity(string name , string password)
+
+        public PlayerDbEntity(string name, string password)
         {
-             Name = name;
-           
+            Name = name;
+
             Password = password;
 
             this.Scores = new List<Score>();
@@ -38,7 +36,7 @@ namespace Models
             }
             set
             {
-                if (value.Length < 6  )
+                if (value.Length < 6)
                     throw new InvalidNameLengthException();
 
                 this.name = value;
@@ -54,16 +52,12 @@ namespace Models
                     throw new InvalidPasswordLengthException();
 
                 if (!value.Any(x => char.IsDigit(x)))
-                    throw new InvalidPasswordDigitException(); 
+                    throw new InvalidPasswordDigitException();
 
                 this.password = value;
             }
         }
 
         public List<Score> Scores { get; set; }
-
-
-
-
     }
 }

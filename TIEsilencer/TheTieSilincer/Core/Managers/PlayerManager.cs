@@ -30,7 +30,6 @@
                 this.score = value;
             }
         }
-       
 
         public PlayerManager()
         {
@@ -71,7 +70,7 @@
         {
             if (args.Ship.ShipType == this.Player.Ship.ShipType)
             {
-                this.Player.Ship.Armor-=100;
+                this.Player.Ship.Armor -= 100;
 
                 this.checkHealth();
             }
@@ -81,9 +80,8 @@
         {
             if (this.Player.Ship.Armor < 0)
             {
-
                 Console.Clear();
-                Console.SetCursorPosition(49, 15);                 
+                Console.SetCursorPosition(49, 15);
                 Console.WriteLine("Game Over!");
                 Console.SetCursorPosition(47, 16);
                 Console.WriteLine($"Your Score is {this.score}");
@@ -124,15 +122,10 @@
             Console.SetCursorPosition(Console.WindowWidth - 6, 1);
             Console.Write(this.Player.Ship.Armor);
 
-
-
             Console.SetCursorPosition(Console.WindowWidth - 6, 2);
             Console.Write("Score");
             Console.SetCursorPosition(Console.WindowWidth - 6, 3);
             Console.Write(this.score);
-
-
-
         }
 
         public void Clear()

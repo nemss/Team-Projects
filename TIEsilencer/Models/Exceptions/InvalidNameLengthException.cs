@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Models.Exceptions;
+﻿using Models.Exceptions;
 
 namespace TheTieSilincer.Exceptions
 {
-    public class InvalidNameLengthException:CustomRegisterException
+    public class InvalidNameLengthException : CustomRegisterException
     {
         public override string Message
         {

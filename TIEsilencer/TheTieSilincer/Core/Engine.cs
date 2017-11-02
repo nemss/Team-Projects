@@ -1,9 +1,5 @@
-﻿using System;
-using Data;
-using Models;
-//using TheTieSilincer.Data;
+﻿//using TheTieSilincer.Data;
 //using TheTieSilincer.Models.Models;
-using TheTieSilincer.Support;
 
 namespace TheTieSilincer.Core
 {
@@ -32,9 +28,6 @@ namespace TheTieSilincer.Core
             MenuService.ShowWelcomeScreen();
             MenuService.WelcomeMenuScreenSelection();
             Console.Clear();
-
-            
-             
 
             while (!GameOver)
             {
