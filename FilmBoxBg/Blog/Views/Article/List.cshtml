@@ -1,0 +1,37 @@
+﻿@model List<Blog.Models.Article>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var article in Model)
+        {
+            <div class="col-sm-12">
+                <article>
+                    <header>
+                        <h2 class="text-center">
+                            @Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
+                        </h2>
+                    </header>
+                    <p class="text-center">
+                        @article.Content
+                    </p>
+                    <footer>
+                        <div class="text-center">
+                            @foreach (var tag in article.Tags)
+                            {
+                                @Html.ActionLink(tag.Name, "ListArticlesByTag", "Tag", new { @id = tag.Id }, new { @class = "btn btn-default btn-xs" })
+                            }
+                        </div>
+                        <small class="author text-center">
+                            --автор @article.Author.FullName
+                        </small>
+                    </footer>
+                </article>
+            </div>
+        }
+    </div>
+</div>
+<hr />

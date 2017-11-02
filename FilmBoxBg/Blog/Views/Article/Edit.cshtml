@@ -1,0 +1,55 @@
+﻿@model Blog.Models.ArticleModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="container">
+    <div class="well">
+        <h2>Редактиране на публикацията</h2>
+        @using (Html.BeginForm("Edit", "Article", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            @Html.HiddenFor(m => m.AuthorId)
+
+            <div class="form-group">
+                <p class="col-sm-4 control-label">Заглавие</p>
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <p class="col-sm-4 control-label">Резюме</p>
+                <div class="col-sm-4">
+                    @Html.TextAreaFor(m => m.Content, new { @class = "form-control", @rows = "7" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <p class="col-sm-4 control-label">Категория</p>
+                <div class="dropdown col-sm-4">
+                    @Html.DropDownListFor(m => m.CategoryId,
+                        new SelectList(Model.Categories, "Id", "Name", Model.CategoryId),
+                        new { @class = "btn btn-info col-sm-12" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <p class="col-sm-4 control-label">Тагове</p>
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Tags, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-4">
+                    @Html.ActionLink("Назад", "Index", "Article", null, new { @class = "btn btn-default" })
+                    <input type="submit" value="Редактиране" class="btn btn-success" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
